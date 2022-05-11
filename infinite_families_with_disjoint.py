@@ -100,12 +100,15 @@ def ratio_of_ints_in_F_less_than(X):
     all_in_F = all_ints_less_than(X)
     return len(all_in_F)/(floor(X)-1)
 
-def generate_plot(X_max=50000,step_size=1000):
+def generate_plot(X_max=50000,step_size=1000,with_logs=True):
     the_data = [(ratio_of_ints_in_F_less_than(X),1/log(X),1/(log(X)**2)) for X in range(step_size,X_max+1,step_size)]
     the_indices = [X for X in range(step_size,X_max+1,step_size)]
     X_df = pd.DataFrame(the_data, index = the_indices)
-    plot = X_df.plot(style=['-','--',':'])
-    plt.legend(["Proportion of Integers in $\mathcal{F}$","$1/\log X$","$1/(\log X)^2$"])
+    if with_logs:
+        plot = X_df.plot(style=['-','--',':'])
+        plt.legend(["Proportion of Integers in $\mathcal{F}$","$1/\log X$","$1/(\log X)^2$"])
+    else:
+        plot = X_df.iloc[:,0].plot(legend=False)
     fig = plot.get_figure()
-    fig.savefig(f"prop_in_F_up_to_{X_max}.pdf")
-generate_plot()
+    fig.savefig(f"prop_in_F_up_to_{X_max}_{with_logs}.pdf")
+generate_plot(with_logs=False)
