@@ -110,5 +110,5 @@ def generate_plot(X_max=50000,step_size=1000,with_logs=True):
     else:
         plot = X_df.iloc[:,0].plot(legend=False)
     fig = plot.get_figure()
-    fig.savefig(f"prop_in_F_up_to_{X_max}_{with_logs}.pdf")
-generate_plot(with_logs=False)
+    fig.savefig(f"prop_plots/prop_in_F_up_to_{X_max}_{with_logs}.pdf")
+generate_plot()
