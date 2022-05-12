@@ -14,51 +14,12 @@ fixed $M$, or $M$ is in one of the following infinite families:
 | 2 | 3 | 2<sup>a</sup>3<sup>2</sup> + 3<sup>2</sup>|
 |2|3| 2<sup>a</sup>3+3<sup>2</sup>|
 | 2 | 3 | 2<sup>a</sup>3<sup>2</sup> + 3|
-|2|2<sup>c+1|2<sup>a</sup>+q<sup>b</sup>|
-
-$$ 
-\begin{array}{|c|c|c|c|}
-    \hline
-    p & q & X & \text{Disjoint Representations}  
-    \\    \hline\hline
-    2&3&2^a3^2+3^2&
-    2^a3^0+2^{a+3} + 3^2 = 
-    2^a3^2+2^3+3^0 
-    \\
-    2&3&2^a3+3^2&
-    2^a3^0+2^{a+1} + 3^2 = 
-    2^a3^1+2^3+3^0 
-    \\
-    2&3& 2^a3^2+3&
-    2^a3^2+2^1+3^0
-    = 2^a3^0+2^{a+3}+3^1 
-    \\
-    2&2^c+1&2^{a} + q^b&
-    2^{a-1}q^0+2^{a-1}+q^b
-    = 2^c q^{b-1}+2^{a} + q^{b-1}
-    \\
-    2&2^c+1& 2^aq+q&
-    2^a q^0+2^c+q^1
-    =2^a q^1+2^{a+c}+q^0
-    \\
-    2&2^b-1&q^a2^b+2&
-    2^0q^a+2^1+q^{a+1}
-    =2^b q^a+2^0+q^0
-    \\
-    2&2^b-1&2q^a+2^b&
-    2^0q^a+2^b+q^a
-    =2^1q^a+2^0+q^1
-    \\
-    2&2^b -1&2^b q^a+2^b&
-    2^0 q^a+2^b+q^{a+1}=2^b q^a + 2^0+q^1
-    \\
-    2&\text{odd}&2q^a+2 & 
-    2^0 q^a + 2^1+q^a 
-    = 2^1 q^a + 2^0+q^0
-    \\
-    \hline
-\end{array}
-$$
+|2|2<sup>c</sup>+1|2<sup>a</sup>+q<sup>b</sup>|
+|2|2<sup>c</sup>+1| 2<sup>a</sup>q+q|
+|2|2<sup>b</sup>-1|q<sup>a</sup>2<sup>b</sup>+2|
+|2|2<sup>b</sup>-1|2q<sup>a</sup>+2<sup>b</sup>|
+|2|2<sup>b</sup>-1|2<sup>b</sup>q<sup>a</sup>+2<sup>b</sup>|
+|2|odd|2q<sup>a</sup>+2|
 
 The content of this repository is
 * `utilities.py` - This includes utility functions and objects.  Including
