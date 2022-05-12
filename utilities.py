@@ -28,3 +28,9 @@ mersenne_exponents = [2, 3, 5, 7, 13, 17, 19, 31, 61, 89, 107, 127, 521, 607,
                    13466917, 20996011, 24036583, 25964951, 30402457, 32582657, 
                    37156667, 42643801, 43112609, 57885161,74207281, 77232917, 
                    82589933]
+
+# Colorblind cycle published by @thriveth on GitHub
+# https://gist.github.com/thriveth/8560036
+CB_color_cycle = ['black','#377eb8', '#ff7f00', '#4daf4a',
+                  '#f781bf', '#a65628', '#984ea3',
+                  '#999999', '#e41a1c', '#dede00','gray','gray']
