@@ -9,7 +9,14 @@ there are two representations of the form $p^aq^b+p^c+q^d$ that share no common 
 We prove that if $X$ has two such representation, then either $X<M$ for some 
 fixed $M$, or $M$ is in one of the following infinite families:
 
-```math 
+| p | q | X |
+| :-: | :-: | :-: |
+| 2 | 3 | 2<sup>a</sup>3<sup>2</sup> + 3<sup>2</sup>|
+|2|3| 2<sup>a</sup>3+3<sup>2</sup>|
+| 2 | 3 | 2<sup>a</sup>3<sup>2</sup> + 3|
+|2|2<sup>c+1|2<sup>a</sup>+q<sup>b</sup>|
+
+$$ 
 \begin{array}{|c|c|c|c|}
     \hline
     p & q & X & \text{Disjoint Representations}  
@@ -51,7 +58,7 @@ fixed $M$, or $M$ is in one of the following infinite families:
     \\
     \hline
 \end{array}
-```
+$$
 
 The content of this repository is
 * `utilities.py` - This includes utility functions and objects.  Including
