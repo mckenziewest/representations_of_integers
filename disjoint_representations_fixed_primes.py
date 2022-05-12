@@ -8,23 +8,24 @@ from utilities import is_prime
 from math import log, ceil
 import networkx as nx
 
-def fix_p_q_get_all_reps(p,q,Y=500):
+def fix_p_q_get_all_reps(p,q,X=500):
     assert p != q
     assert is_prime(p) and is_prime(q)
-    N1 = ceil(log(Y-2,p))
+    N1 = ceil(log(X-2,p))
     from collections import defaultdict
     reps = defaultdict(list)
     for alpha in range(N1):
-        M1 = ceil(log((Y-2)/(p**alpha),q))
+        M1 = ceil(log((X-2)/(p**alpha),q))
         for beta in range(M1):
-            N2 = ceil(log(Y-1-p**alpha*q**beta,p))
+            N2 = ceil(log(X-1-p**alpha*q**beta,p))
             for gamma in range(N2):
-                M2 = ceil(log(Y-p**gamma-p**alpha*q**beta,q))
+                M2 = ceil(log(X-p**gamma-p**alpha*q**beta,q))
                 for delta in range(M2):
-                    X = p**alpha*q**beta + p**gamma + q**delta
-                    if X < Y:
-                        reps[X].append([alpha,beta,gamma,delta])
+                    x = p**alpha*q**beta + p**gamma + q**delta
+                    if x < X:
+                        reps[x].append([alpha,beta,gamma,delta])
     return reps
+
 def fix_p_q_proportions(p,q,Y=500):
     all_reps = fix_p_q_get_all_reps(p,q,Y)
     return len(all_reps)/(Y-1)
