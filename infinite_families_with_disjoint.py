@@ -101,6 +101,25 @@ def ratio_of_ints_in_F_less_than(X):
     return len(all_in_F)/(floor(X)-1)
 
 def generate_plot(X_max=50000,step_size=1000,with_logs=True):
+    '''
+    Generate and save a plot describing the proportion of integers in F.
+    Figures are saved to a subdirectory named 'prop_plots/'. The filename includes
+    `X_max` and `with_logs`.
+
+    Parameters
+    ----------
+    X_max : int
+        Upper bound on the values to consider. (default: 50000)
+    step_size : int
+        how often to generate a point of data for the graph (default: 1000)
+    with_logs : bool
+        whether or not to include the graphs of y=1/log(x) and y=1/(log(x))^2 (default: True)
+
+    Returns
+    -------
+    None
+
+    '''
     the_data = [(ratio_of_ints_in_F_less_than(X),1/log(X),1/(log(X)**2)) for X in range(step_size,X_max+1,step_size)]
     the_indices = [X for X in range(step_size,X_max+1,step_size)]
     X_df = pd.DataFrame(the_data, index = the_indices)
@@ -111,4 +130,3 @@ def generate_plot(X_max=50000,step_size=1000,with_logs=True):
         plot = X_df.iloc[:,0].plot(legend=False)
     fig = plot.get_figure()
     fig.savefig(f"prop_plots/prop_in_F_up_to_{X_max}_{with_logs}.pdf")
-generate_plot()
