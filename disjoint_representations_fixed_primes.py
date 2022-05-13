@@ -112,5 +112,5 @@ def make_table_odd_primes_disjoint(X = 1000000000,largest_prime = 19):
     for p,q in [(p,q) for p in range(3,largest_prime) for q in range(p+1,largest_prime+1) if is_prime(p) and is_prime(q)]:
         big, reps, number = get_largest_int_with_totally_disjoint_representations(p, q,X)
         representations = "=".join([f"{p}^{{{r[0]}}}{q}^{{{r[1]}}}+{p}^{{{r[2]}}}+{q}^{{{r[3]}}}" for r in reps if len(r)==4])
-        table += f"{p}&{q}&{number:,}&{big:,}&${representations}$\\\\\n"
+        table += f"${p}$&${q}$&${number}$&$\\numprint{{{big}}}$&${representations}$\\\\\n"
     print(table)
